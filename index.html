@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BarberCo — Premium Barbershop</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="logo">✂  HAIR STUDIO</span>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="location.href='contact.html'">Book Now</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="active">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="mob-cta">Book Now ✂</a>
+  </div>
+  <script>
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mobileNav');
+    btn.addEventListener('click', () => { btn.classList.toggle('open'); nav.classList.toggle('open'); });
+  </script>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <span class="hero-tag">Premium Barbershop</span>
+      <h1>Welcome to<br><span>TACITURN LUXE HAIR STUDIO</span></h1>
+      <p>Where beauty meets precision, elegance, and perfect touch. At Taciturn Luxe,  every style, touch, and transformation is crafted with precision, confidence, and sophistication, to bring out the most radiant version of you.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn-primary">Book Appointment</a>
+        <a href="services.html" class="btn-ghost">View Services</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img
+        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&q=80"
+        alt="Professional barber at work"
+      />
+      <div class="hero-badge">⭐ 4.9 · 1,200+ Happy Clients</div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">✂️</div>
+      <h3>Master Barbers</h3>
+      <p>Our team brings 10+ years of experience in precision cuts, fades, and classic styles.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🕐</div>
+      <h3>Easy Booking</h3>
+      <p>Book your slot online in seconds. No waiting, no hassle  just show up and get styled.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💎</div>
+      <h3>Premium Products</h3>
+      <p>We use only top-tier grooming products to keep your hair and skin looking its best.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <div class="section-title">
+    <h2>Our Services</h2>
+    <p>From classic cuts to modern fades we've got every style covered.</p>
+  </div>
+
+  <section class="products">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80" alt="Haircut" />
+      <div class="product-info">
+        <h4>Classic Haircut</h4>
+        <div class="price">From $25</div>
+        <a href="contact.html" class="btn-outline">Book Now</a>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=500&q=80" alt="Beard Trim" />
+      <div class="product-info">
+        <h4>Beard Trim & Shape</h4>
+        <div class="price">From $20</div>
+        <a href="contact.html" class="btn-outline">Book Now</a>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=500&q=80" alt="Skin Fade" />
+      <div class="product-info">
+        <h4>Skin Fade</h4>
+        <div class="price">From $35</div>
+        <a href="contact.html" class="btn-outline">Book Now</a>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?w=500&q=80" alt="Hot Towel Shave" />
+      <div class="product-info">
+        <h4>Hot Towel Shave</h4>
+        <div class="price">From $30</div>
+        <a href="contact.html" class="btn-outline">Book Now</a>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80" alt="Hair & Beard Combo" />
+      <div class="product-info">
+        <h4>Hair & Beard Combo</h4>
+        <div class="price">From $45</div>
+        <a href="contact.html" class="btn-outline">Book Now</a>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src=".//images/kid are cut.jpg" />
+      <div class="product-info">
+        <h4>Kids Haircut</h4>
+        <div class="price">From $18</div>
+        <a href="contact.html" class="btn-outline">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO BANNER -->
+  <section class="promo">
+    <div class="promo-text">
+      <h2>First Visit?<br>Get 20% Off<br><span>Your Service.</span></h2>
+      <p>New to TLHS? We'd love to welcome you. Book your first appointment and enjoy 20% off any service.</p>
+      <button class="btn-light">Claim Your Offer</button>
+    </div>
+    <div class="promo-image">
+      <img
+        src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=700&q=80"
+        alt="Barber shop interior"
+        />
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-title" style="padding:0;">
+      <h2>What Clients Say</h2>
+      <p>Real reviews from our loyal customers.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Best barbershop in town. The fade was absolutely clean and the barber really listened to what I wanted. Highly recommend!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">I</div>
+          <div class="reviewer-info">
+            <strong>Ismail T.</strong>
+            <span>Regular Client</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"The hot towel shave was an incredible experience. Felt like a new man walking out. The atmosphere is top notch too."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">D</div>
+          <div class="reviewer-info">
+            <strong>David A.</strong>
+            <span>Monthly Member</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Brought my son here for his first proper haircut. The barber was patient and friendly. We'll definitely be coming back!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">T</div>
+          <div class="reviewer-info">
+            <strong>Teni L.</strong>
+            <span>Happy Parent</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo">✂ Taciturn Luxe Hair Studio</span>
+        <p>Premium grooming for the modern gentleman. Walk in looking good, walk out looking great.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="gallery-haircuts.html">Haircuts</a></li>
+          <li><a href="gallery-beards.html">Beard Trim</a></li>
+          <li><a href="gallery-fades.html">Skin Fade</a></li>
+          <li><a href="services.html">Hot Shave</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html">Our Team</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Visit Us</h5>
+        <ul>
+          <li><a href="#">No 14 Sapele close Oriokuta Ikorodu  Lagos</a></li>
+          <li><a href="#">Mon–Sat: 9am–10pm</a></li>
+          <li><a href="#">Sun: 10am–11pm</a></li>
+          <li><a href="#">+234 705 995 7675</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Taciturn Luxe Hair Studio. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </footer>
+
+</body>
+</html>

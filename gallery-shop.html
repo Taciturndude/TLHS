@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop Gallery — BarberCo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    .page-hero { background: linear-gradient(135deg,#111 55%,#1e1e1e 100%); padding: 80px 60px; text-align: center; }
+    .page-hero h1 { color: #fff; font-size: 2.8rem; margin-bottom: 14px; }
+    .page-hero h1 span { color: #c9a84c; }
+    .page-hero p { color: #aaa; font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.8; }
+    .gallery-section { padding: 70px 60px; background: #fff; }
+    .gallery-filter { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
+    .filter-btn { padding: 8px 22px; border-radius: 20px; border: 2px solid #ddd; background: transparent; color: #555; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif; text-decoration: none; display: inline-block; }
+    .filter-btn:hover, .filter-btn.active { background: #111; border-color: #111; color: #c9a84c; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .gallery-item { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 1; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: flex-end; padding: 18px; opacity: 0; transition: opacity 0.3s; }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay span { color: #fff; font-size: 0.9rem; font-weight: 600; border-left: 3px solid #c9a84c; padding-left: 10px; }
+    .gallery-item.tall { grid-row: span 2; aspect-ratio: auto; }
+    .gallery-item.tall img { height: 100%; }
+    @media (max-width: 900px) {
+      .page-hero { padding: 60px 24px; }
+      .gallery-section { padding: 40px 24px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item.tall { grid-row: span 1; aspect-ratio: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="logo">✂ BarberCo</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="location.href='contact.html'">Book Now</button>
+  </nav>
+
+  <div class="page-hero">
+    <h1>Gallery — <span>Our Shop</span></h1>
+    <p>A look inside our space — where great cuts and good vibes come together.</p>
+  </div>
+
+  <section class="gallery-section">
+    <div class="gallery-filter">
+      <a href="gallery.html" class="filter-btn">All Work</a>
+      <a href="gallery-haircuts.html" class="filter-btn">Haircuts</a>
+      <a href="gallery-fades.html" class="filter-btn">Fades</a>
+      <a href="gallery-beards.html" class="filter-btn">Beards</a>
+      <a href="gallery-shop.html" class="filter-btn active">Shop</a>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item tall">
+        <img src="https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Shop 1" />
+        <div class="gallery-overlay"><span>Main Floor</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/668196/pexels-photo-668196.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Shop 2" />
+        <div class="gallery-overlay"><span>Premium Tools</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Shop 3" />
+        <div class="gallery-overlay"><span>Barber Station</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Shop 4" />
+        <div class="gallery-overlay"><span>Shave Corner</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/3998429/pexels-photo-3998429.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Shop 5" />
+        <div class="gallery-overlay"><span>Grooming Products</span></div>
+      </div>
+      <div class="gallery-item tall">
+        <img src="https://images.pexels.com/photos/2076930/pexels-photo-2076930.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Shop 6" />
+        <div class="gallery-overlay"><span>The Chair</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo">✂ BarberCo</span>
+        <p>Premium grooming for the modern gentleman.</p>
+      </div>
+      <div><h5>Services</h5><ul><li><a href="services.html">Haircuts</a></li><li><a href="services.html">Beard Trim</a></li><li><a href="services.html">Skin Fade</a></li><li><a href="services.html">Hot Shave</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="about.html">Our Team</a></li><li><a href="gallery.html">Gallery</a></li></ul></div>
+      <div><h5>Visit Us</h5><ul><li><a href="contact.html">No 14 Sapele close Oriokuta Ikorodu Lagos</a></li><li><a href="#">Mon–Sat: 9am–10pm</a></li><li><a href="#">Sun: 10am–11pm</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Taciturn Luxe Hair Studio. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </footer>
+
+</body>
+</html>
