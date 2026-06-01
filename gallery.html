@@ -16,80 +16,134 @@
     .page-hero h1 span { color: #c9a84c; }
     .page-hero p { color: #aaa; font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.8; }
 
-    .gallery-section { padding: 70px 60px; background: #fff; }
+    .gallery-section {
+      padding: 70px 60px;
+      background: #fff;
+    }
 
     .gallery-filter {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       justify-content: center;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
       flex-wrap: wrap;
     }
+
     .filter-btn {
-      padding: 8px 22px;
-      border-radius: 20px;
-      border: 2px solid #ddd;
+      padding: 9px 24px;
+      border-radius: 25px;
+      border: 2px solid #e0e0e0;
       background: transparent;
-      color: #555;
-      font-size: 0.88rem;
+      color: #666;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.25s ease;
       font-family: 'Inter', sans-serif;
       text-decoration: none;
       display: inline-block;
+      letter-spacing: 0.3px;
     }
-    .filter-btn:hover, .filter-btn.active {
+
+    .filter-btn:hover {
+      background: #f5f5f5;
+      border-color: #ccc;
+      color: #333;
+    }
+
+    .filter-btn.active {
       background: #111;
       border-color: #111;
       color: #c9a84c;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 24px;
     }
+
     .gallery-item {
       position: relative;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
       aspect-ratio: 1;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      border: 1px solid rgba(0,0,0,0.04);
     }
+
+    .gallery-item:hover {
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s;
+      transition: transform 0.5s ease, filter 0.4s ease;
+      filter: brightness(0.95) saturate(1.05);
     }
-    .gallery-item:hover img { transform: scale(1.05); }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+      filter: brightness(1.05) saturate(1.1);
+    }
+
     .gallery-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: linear-gradient(transparent 45%, rgba(0,0,0,0.8));
       display: flex;
       align-items: flex-end;
-      padding: 18px;
+      padding: 22px;
       opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-overlay span {
-      color: #fff;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border-left: 3px solid #c9a84c;
-      padding-left: 10px;
+      transition: opacity 0.35s ease;
     }
 
-    .gallery-item.tall { grid-row: span 2; aspect-ratio: auto; height: 100%; }
-    .gallery-item.tall img { height: 100%; }
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay span {
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-left: 3px solid #c9a84c;
+      padding-left: 12px;
+      line-height: 1.4;
+      transform: translateY(10px);
+      transition: transform 0.35s ease;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+
+    .gallery-item:hover .gallery-overlay span {
+      transform: translateY(0);
+    }
+
+    .gallery-item.tall {
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+
+    .gallery-item.tall img {
+      height: 100%;
+    }
 
     @media (max-width: 900px) {
       .page-hero { padding: 60px 24px; }
       .gallery-section { padding: 40px 24px; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .gallery-item.tall { grid-row: span 1; aspect-ratio: 1; }
+    }
+
+    @media (max-width: 500px) {
+      .gallery-grid { grid-template-columns: 1fr; gap: 14px; }
+      .gallery-filter { gap: 8px; }
+      .filter-btn { padding: 7px 16px; font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -123,40 +177,28 @@
 
     <div class="gallery-grid">
       <div class="gallery-item tall">
-        <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Barber at work" />
+        <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Barber at work" loading="lazy" />
         <div class="gallery-overlay"><span>Master at Work</span></div>
       </div>
       <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/2076930/pexels-photo-2076930.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Classic Cut" />
+        <img src="https://images.pexels.com/photos/2076930/pexels-photo-2076930.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Classic Cut" loading="lazy" />
         <div class="gallery-overlay"><span>Classic Cut</span></div>
       </div>
       <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/3998429/pexels-photo-3998429.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Beard Trim" />
+        <img src="https://images.pexels.com/photos/3998429/pexels-photo-3998429.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Beard Trim" loading="lazy" />
         <div class="gallery-overlay"><span>Beard Trim</span></div>
       </div>
       <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/1570807/pexels-photo-1570807.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Skin Fade" />
+        <img src="https://images.pexels.com/photos/4625626/pexels-photo-4625626.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Skin Fade" loading="lazy" />
         <div class="gallery-overlay"><span>Skin Fade</span></div>
       </div>
       <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Hot Shave" />
+        <img src="https://images.pexels.com/photos/6007400/pexels-photo-6007400.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Hot Shave" loading="lazy" />
         <div class="gallery-overlay"><span>Hot Towel Shave</span></div>
       </div>
       <div class="gallery-item tall">
-        <img src="https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Shop Interior" />
-        <div class="gallery-overlay"><span>Our Shop</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Combo Style" />
-        <div class="gallery-overlay"><span>Hair & Beard Combo</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/1805600/pexels-photo-1805600.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Kids Cut" />
+        <img src=".//images/kid are cut.jpg" alt="Kids Cut" loading="lazy" />
         <div class="gallery-overlay"><span>Kids Cut</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/668196/pexels-photo-668196.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Barber Tools" />
-        <div class="gallery-overlay"><span>Premium Tools</span></div>
       </div>
     </div>
   </section>
