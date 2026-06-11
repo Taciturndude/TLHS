@@ -517,7 +517,7 @@ footer ul li a:hover { color: #c9a84c; }
 
 /* HAMBURGER */
 .hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
@@ -543,6 +543,10 @@ footer ul li a:hover { color: #c9a84c; }
   background: #111;
   padding: 0 24px;
   overflow: hidden;
+}
+.mobile-nav.open {
+  display: flex;
+  padding: 16px 24px 20px;
 }
 .mobile-nav a {
   color: #bbb;
@@ -572,7 +576,6 @@ footer ul li a:hover { color: #c9a84c; }
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
   .mobile-nav { display: none; }
-  .mobile-nav.open { display: flex; padding: 16px 24px 20px; }
   .hero, .promo { grid-template-columns: 1fr; padding: 40px 24px; }
   .hero-text h1 { font-size: 2rem; }
   .hero-image img { height: 320px; }
