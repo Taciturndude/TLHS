@@ -571,6 +571,18 @@ footer ul li a:hover { color: #c9a84c; }
 }
 
 /* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero { min-height: auto; padding: 50px 40px; }
+  .hero-text h1 { font-size: 2.4rem; }
+  .about-story { padding: 60px 40px; gap: 40px; }
+  .stats-bar { padding: 40px 40px; }
+  .team-section { padding: 50px 40px; }
+  .services-full { padding: 50px 40px; }
+  .page-hero { padding: 60px 40px; }
+  .page-hero h1 { font-size: 2.4rem; }
+  .contact-section { padding: 60px 40px; gap: 40px; }
+}
+
 @media (max-width: 900px) {
   nav { padding: 16px 24px; }
   .nav-links, .nav-cta { display: none; }
@@ -587,4 +599,36 @@ footer ul li a:hover { color: #c9a84c; }
   .testimonials { padding: 40px 24px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   footer { padding: 40px 24px 20px; }
+}
+
+@media (max-width: 600px) {
+  .hero-text h1 { font-size: 1.6rem; }
+  .hero-text p { font-size: 0.9rem; }
+  .hero-image img { height: 240px; }
+  .hero, .promo { padding: 30px 18px; }
+  .features, .products { padding: 30px 18px; gap: 20px; }
+  .section-title { padding: 30px 18px 10px; }
+  .section-title h2 { font-size: 1.5rem; }
+  .testimonials { padding: 30px 18px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+  footer { padding: 30px 18px 16px; }
+  .page-hero { padding: 40px 18px; }
+  .page-hero h1 { font-size: 1.8rem; }
+  .page-hero p { font-size: 0.9rem; }
+  .about-story { padding: 30px 18px; }
+  .about-story img { height: 260px; }
+  .about-story-text h2 { font-size: 1.5rem; }
+  .stats-bar { grid-template-columns: 1fr 1fr; padding: 30px 18px; gap: 14px; }
+  .stat h3 { font-size: 1.8rem; }
+  .team-section { padding: 30px 18px; }
+  .team-section h2 { font-size: 1.5rem; }
+  .services-full { padding: 30px 18px; }
+  .service-detail h2 { font-size: 1.4rem; }
+  .contact-section { padding: 30px 18px; gap: 30px; }
+  .contact-info h2 { font-size: 1.4rem; }
+  .booking-form { padding: 20px 16px; }
+  .booking-form h2 { font-size: 1.4rem; }
+  .promo-text h2 { font-size: 1.5rem; }
+  .btn-primary, .btn-ghost, .btn-light { padding: 11px 22px; font-size: 0.85rem; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
 }
