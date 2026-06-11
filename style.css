@@ -542,13 +542,7 @@ footer ul li a:hover { color: #c9a84c; }
   flex-direction: column;
   background: #111;
   padding: 0 24px;
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.3s;
-}
-.mobile-nav.open {
-  max-height: 400px;
-  padding: 16px 24px 20px;
 }
 .mobile-nav a {
   color: #bbb;
@@ -577,7 +571,8 @@ footer ul li a:hover { color: #c9a84c; }
   nav { padding: 16px 24px; }
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
-  .mobile-nav { display: flex; }
+  .mobile-nav { display: none; }
+  .mobile-nav.open { display: flex; padding: 16px 24px 20px; }
   .hero, .promo { grid-template-columns: 1fr; padding: 40px 24px; }
   .hero-text h1 { font-size: 2rem; }
   .hero-image img { height: 320px; }
