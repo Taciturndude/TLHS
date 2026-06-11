@@ -51,7 +51,23 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav-cta" onclick="location.href='contact.html'">Book Now</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html" class="active">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="mob-cta">Book Now ✂</a>
+  </div>
+  <script>
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mobileNav');
+    btn.addEventListener('click', () => { btn.classList.toggle('open'); nav.classList.toggle('open'); });
+  </script>
 
   <div class="page-hero">
     <h1>Gallery — <span>Beards</span></h1>
